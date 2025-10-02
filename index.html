@@ -1,21 +1,24 @@
 <html>
     <body>
-        <div id="myapp">
-
-        </div>
+        <div id="myapp"></div>
         <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
         <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-        <script type="text/javascript">
-            const app = document.getElementById("myapp");
-            const header = document.createElement('h1');
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/jsx">
+            const app = document.getElementById('myapp');
 
-            const headerText = 'Learn. Dev. Improve. Enjoy 🔥.';
+            function Header() {
+                return <h1>Learn. Dev. Improve. Enjoy🔥. (but on a component)</h1>
+            }
 
-            const headerContent = document.createTextNode(headerText);
+            function HomePage() {
+                return  (<div>
+                            <Header/>
+                        </div>);
+            }
 
-            header.appendChild(headerContent);
-
-            app.appendChild(header);
+            const root = ReactDOM.createRoot(app);
+            root.render(<HomePage/>);
         </script>
     </body>
 </html>
