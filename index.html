@@ -6,14 +6,24 @@
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
         <script type="text/jsx">
             const app = document.getElementById('myapp');
+            const text = 'Learn. Dev. Improve. Enjoy🔥.'
 
-            function Header() {
-                return <h1>Learn. Dev. Improve. Enjoy🔥. (but on a component)</h1>
+            const myArray = ["hola", "adios", "chaho", "buenos dias"];
+
+            function Header({title}) {
+                return <h1>{title? title : 'default ☠️'}</h1>
             }
 
             function HomePage() {
                 return  (<div>
-                            <Header/>
+                            <Header title="hola"/>
+                            <Header title={text}/>
+                            <Header />
+                             <ul>
+                                {myArray.map((item) => (
+                                    <li key={item}>{item}</li>
+                                ))}
+                            </ul>
                         </div>);
             }
 
