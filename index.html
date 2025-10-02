@@ -15,6 +15,15 @@
             }
 
             function HomePage() {
+
+                const [dieCounter, setDieCounter] = React.useState(0);
+
+                function handleClick() {
+                    setDieCounter(dieCounter+1);
+                    console.log("hola michin volador")
+                
+                }
+
                 return  (<div>
                             <Header title="hola"/>
                             <Header title={text}/>
@@ -24,6 +33,7 @@
                                     <li key={item}>{item}</li>
                                 ))}
                             </ul>
+                            <button onClick={handleClick}>Die counter: {dieCounter}</button>
                         </div>);
             }
 
